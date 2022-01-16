@@ -13,3 +13,16 @@ def binary_search(sequence, target):
         elif target > sequence[middle]:
             low = middle + 1
     return low
+
+# change prefics number
+def int2str(n, base):
+    if not 2 <= base <= 36:
+        raise ValueError('base must be between 2 and 36')
+
+    table = '0123456789abcdefghijklmnopqrstuvwxyz'
+    buf = []
+    while True:
+        n, r = divmod(n, base)
+        buf.append(table[r])
+        if n == 0: break
+    return ''.join(reversed(buf))
