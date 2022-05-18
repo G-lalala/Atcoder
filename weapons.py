@@ -14,7 +14,7 @@ def binary_search(sequence, target):
             low = middle + 1
     return low
 
-# change prefics number
+# change prefics number(整数から特定進数へ変更)
 def int2str(n, base):
     if not 2 <= base <= 36:
         raise ValueError('base must be between 2 and 36')
@@ -26,3 +26,7 @@ def int2str(n, base):
         buf.append(table[r])
         if n == 0: break
     return ''.join(reversed(buf))
+
+# dict value sort
+def dictValueSort(dict_data) :    
+    return dict(sorted(dict_data.items(), key=lambda x: x[1]))
